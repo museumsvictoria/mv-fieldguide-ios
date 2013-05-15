@@ -21,4 +21,5 @@ If you use this code to develop a field guide of some description, please let us
 Cheers,
 
 Simon Sherrin
-77th June, 2011 
+15th May, 2013 
+( Originally posted on Google Code 77th June, 2011) 
