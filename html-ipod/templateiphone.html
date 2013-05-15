@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+<link href="styleiphone.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<section class="leftcolumn">
+		<header>
+			<h1><%animalName%></h1>
+			<h2><%scientificName%></h2>
+		</header>
+		<div class="widget" id="distinctive">
+			<h3>Distinctive Markings:</h3>
+			<p><%distinctive%></p>
+		</div>
+		<h3 class="<%commonNamesClass%>">Other Common Names</h3><%commonNames%>
+
+		<h3>Identifying Characteristics</h3><%identifyingCharacteristics%>
+		<h3>Biology</h3><%biology%>
+		<h3>Habitat</h3><%habitat%>	
+		<h3>Native Status</h3><%native%>	
+
+	</section>
+	
+	<section class="rightcolumn">
+		<div class="widget" id="distribution">
+			<h3>Distribution:</h3>
+			<img class="distributionimage" src="<%mapimage%>"/>
+			<p><%distribution%></p>
+		</div>
+		<div class="widget" id="status">
+			<h3>Endangered Status</h3>
+			<ul>
+				<li><img src="icon_vic.png" alt="Victoria"><div class="track"><span class="<%ffg%>"></span>Victorian Status: <%ffg%></div></li>
+				<li><img src="icon_aus.png" alt="Australia"><div class="track"><span class="<%epbc%>"></span>Australian Status: <%epbc%></div></li>
+				<li><img src="icon_earth.png" alt="Earth"><div class="track"><span class="<%iucn%>"></span>Worldwide Status: <%iucn%></div></li>
+			</ul>
+		</div>
+		<table>
+			<tr><th colspan="2">Taxonomy</th></tr>
+			<tr class="even"><td>Phylum:</td><td><%phylum%></td></tr>
+			<tr><td>Class:</td><td><%class%></td></tr>
+			<tr class="even"><td>Order:</td><td><%order%></td></tr>
+			<tr><td>Family:</td><td><%family%></td></tr>
+			<tr class="even"><td>Genus:</td><td><%genus%></td></tr>
+			<tr><td>Species:</td><td><%species%></td></tr>
+		</table>
+	</section>
+	
+</body>
+</html>

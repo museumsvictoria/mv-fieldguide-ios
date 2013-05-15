@@ -1,0 +1,87 @@
+<!doctype html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script>
+/* Activate Widget Flip */
+	function toggleFlip(objectid) {
+		currentobj = document.getElementById(objectid);
+ 		if (currentobj.className.indexOf("flip") != -1) {
+			currentobj.className = currentobj.className.replace( " flip", "");
+		} else {
+		currentobj.className += " flip";
+		}
+	}
+</script>
+</head>
+<body>
+
+	<div class="leftcolumn">
+		<header>
+			<h1><%animalName%></h1>
+			<h2><%scientificName%></h2>
+		</header>
+		<h3 class="<%commonNamesClass%>">Other Common Names</h3><%commonNames%>
+		<h3>Identifying Characteristics</h3><%identifyingCharacteristics%>
+		<h3 class="<%biteClass%>">Bite/Sting</h3><%bite%>
+		<h3>Biology</h3><%biology%>
+		<h3 class="<%dietClass%>">Diet</h3><%diet%>
+		<h3>Habitat</h3><%habitat%>	
+		<h3>Native Status</h3><%native%>
+		<table>
+			<tr><th colspan="2">Taxonomy</th></tr>
+			<tr class="even"><td>Phylum:</td><td><%phylum%></td></tr>
+			<tr><td>Class:</td><td><%class%></td></tr>
+			<tr class="even"><td>Order:</td><td><%order%></td></tr>
+			<tr><td>Family:</td><td><%family%></td></tr>
+			<tr class="even"><td>Genus:</td><td><em><%genus%></em></td></tr>
+			<tr><td>Species:</td><td><em><%species%></em></td></tr>
+		</table>
+	</div><!-- end .leftcolumn -->
+	
+	<div class="rightcolumn">
+		<div class="widget" id="distinctive">
+			<div class="front">
+				<h3>Distinctive Markings</h3>
+				<p><%distinctive%></p>
+			</div>
+		</div>
+		<div class="widget" id="distribution">
+			<div class="front">
+				<h3>Distribution<span class="infobutton" onClick="toggleFlip('distribution')"></span></h3>
+				<img class="distributionimage" src="<%mapimage%>" />
+				<p><%distribution%></p>
+			</div>
+			<div class="back">
+				<h3>About <span class="light">Distribution</span><span onClick="toggleFlip('distribution')" class="button">Done</span></h3>
+				<img class="distributionimage" src="<%mapimage%>" />
+				<p class="hidden"><%distribution%></p>
+				<div class="overlay">
+					<p>Information about <em>Distribution</em>: Nam diam arcu, sodales eu dictum vitae, aliquam sed ante. Suspendisse tempor convallis orci sit amet euismod. Quisque nulla diam, sagittis ut rhoncus at, malesuada eget mi. In hac habitasse platea dictumst. Aliquam vitae varius dolor. Pellentesque lectus purus, commodo in porttitor consequat, ornare non leo. Sed sed ante lobortis mi lacinia dapibus. Maecenas sit amet nulla dui. </p>
+				</div>
+			</div>
+		</div>
+		<div class="widget" id="status">
+			<div class="front">
+				<h3>Endangered Status<span class="infobutton" onClick="toggleFlip('status')"></span></h3>
+				<ul>
+					<li><img src="icon_local.png" alt="Local" /><div class="track"><span class="<%lcs%>"></span>Local: <%lcs%></div></li>
+					<li><img src="icon_country.png" alt="National" /><div class="track"><span class="<%ncs%>"></span>National: <%ncs%></div></li>
+					<li><img src="icon_world.png" alt="Worldwide" /><div class="track"><span class="<%wcs%>"></span>Worldwide: <%wcs%></div></li>
+				</ul>
+			</div>
+			<div class="back">
+				<h3>About <span class="light">Endangered Status</span><span onClick="toggleFlip('status')" class="button">Done</span></h3>
+				<div class="overlay">
+					<p>Information about <em>Local Conversation Status.</em></p>
+					<p><a href="#">External link</a>. </p>
+					<p>Information about <em>National Conversation Status.</em></p>
+					<p><a href="#">External link</a>. </p>
+					<p>Information about <em>Worldwide Conversation Status.</em></p>
+					<p><a href="#">External link</a>. </p>
+				</div>
+			</div>
+		</div>
+	</div><!-- end .rightcolumn -->
+	
+</body>
+</html>
