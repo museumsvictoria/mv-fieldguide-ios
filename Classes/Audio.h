@@ -23,7 +23,9 @@
 @property (nonatomic, retain) NSString * caption;
 @property (nonatomic, retain) NSString * credit;
 @property (nonatomic, retain) Animal * animal;
+@property (nonatomic, retain) NSNumber	* order;
 
+- (NSComparisonResult) compareOrder:(Audio *)i;
 @end
 
 

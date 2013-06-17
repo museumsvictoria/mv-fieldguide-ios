@@ -116,7 +116,7 @@
 		taxonListView.rightViewReference = self.rightViewReference;
 		[navigationController pushViewController:taxonListView animated:NO];
 		
-		[window addSubview:splitviewController.view];
+		[window setRootViewController:splitviewController];
 		if (buildingDatabase) {
             //Disable everything to prevent oddities
 			rightViewReference.toolbar.userInteractionEnabled = NO;
@@ -136,7 +136,7 @@
 				//display the wait screen
                 //initiPhoneLayout gets called when the database build is complete in
 			iPhoneLoaderView = [[iPhoneInitialLoadView alloc] initWithNibName:@"iPhoneInitialLoadView" bundle:nil];
-			[window addSubview:iPhoneLoaderView.view];
+            [window setRootViewController:iPhoneLoaderView];
 		}else{
 			[self initiPhoneLayout];
 		}
@@ -179,7 +179,8 @@
 	NSArray *tabBarVCArray = [NSArray arrayWithObjects:navigationController,aToZNavController,searchNavController,aboutVC, nil];
 	tabBarController.viewControllers = tabBarVCArray;
 	NSLog(@"In Tab View Controller");
-	[window addSubview:tabBarController.view];	
+	//[window addSubview:tabBarController.view];
+    [window setRootViewController:tabBarController];
 	[aboutVC release];
 	[customSearchViewController release];
 	[searchNavController release];
@@ -381,12 +382,15 @@
 				NSLog(@"Image Count %d", [[tmpAnimal images] count]);
 				
 				NSArray *tmpAudioArray = [tmpAnimalData objectForKey:@"audioFiles"];
-				for (NSDictionary *tmpAudioData in tmpAudioArray) {
-					Audio *tmpAudio = [NSEntityDescription insertNewObjectForEntityForName:@"Audio" inManagedObjectContext:currentContext];
-					tmpAudio.filename = [tmpAudioData objectForKey:@"filename"];
-					tmpAudio.credit = [tmpAudioData objectForKey:@"credit"];
-					[tmpAnimal addAudiosObject:tmpAudio];
-				}
+                int audiocounter = 0;
+                for (NSDictionary *tmpAudioData in tmpAudioArray) {
+                    audiocounter +=1;
+                    Audio *tmpAudio = [NSEntityDescription insertNewObjectForEntityForName:@"Audio" inManagedObjectContext:currentContext];
+                    tmpAudio.filename = [tmpAudioData objectForKey:@"filename"];
+                    tmpAudio.credit = [tmpAudioData objectForKey:@"credit"];
+                    tmpAudio.order = [NSNumber numberWithInt:audiocounter];
+                    [tmpAnimal addAudiosObject:tmpAudio];
+                }
 				
 			}
 			
@@ -541,9 +545,14 @@
     
     NSURL *storeURL = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"Field_Guide_2010.sqlite"]];
     
-    NSError *error = nil;
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             
+                             [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                             
+                             [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+	NSError *error = nil;
     persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]){
         /*
          Replace this implementation with code to handle the error appropriately.
          

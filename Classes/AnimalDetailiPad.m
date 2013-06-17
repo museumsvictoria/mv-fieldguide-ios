@@ -329,7 +329,7 @@
 	if ([[animal audios] count] > 0){
 		playAudioButton.enabled = YES;	
 		audioCredit.hidden = YES;
-		audioPopoverViewController.audioFilesArray = (NSArray *)[[animal audios] allObjects];
+        audioPopoverViewController.audioFilesArray = [animal sortedAudio];
 	}else {
 		playAudioButton.enabled = NO;
 		//playAudioButton.hidden = YES;
@@ -405,6 +405,16 @@
 	
 
 #pragma mark Split view support
+
+/*
+ Added 25/04/2013 - Hide splitview controller in landscape.
+ Added in iOS 5, when this function returns YES, the detail panel will take up the full screen in landscape mode.
+ */
+-(BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
+{
+    return YES;
+}
+
 
 -(BOOL)isFullScreen{
 	if (imageTextLayoutControl.selectedSegmentIndex ==2) {

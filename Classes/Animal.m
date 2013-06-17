@@ -77,4 +77,17 @@
 	return [NSArray arrayWithArray:myImages];
 }
 
+-(NSArray *) sortedAudio {
+	NSLog(@"Sorted images");
+	NSMutableArray *myAudio = [NSMutableArray arrayWithCapacity:1];
+	[myAudio addObjectsFromArray:[[self audios] allObjects]]; //Get random array
+	if ([myAudio count] > 1){
+		NSLog(@"Call to sort using selector");
+		NSSortDescriptor* desc = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+		[myAudio sortUsingDescriptors:[NSArray arrayWithObject:desc]];
+		[desc release];
+	}
+	return [NSArray arrayWithArray:myAudio];
+}
+
 @end

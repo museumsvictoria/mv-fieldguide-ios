@@ -203,9 +203,11 @@
 	cell.imageView.highlightedAnimationImages = activeTrack.highlightedAnimationImages;
 	cell.imageView.animationDuration = 1;
 	[cell.imageView startAnimating];
-	NSLog(@"AnimationCellCount:%d", [cell.imageView.animationImages count]);
+	//NSLog(@"AnimationCellCount:%d", [cell.imageView.animationImages count]);
 	Audio *selectedAudio = [audioFilesArray objectAtIndex:indexPath.row];
-	NSLog(@"selectedAudio:%@", selectedAudio.filename);
+	NSLog(@"selected row: %ld", (long)indexPath.row);
+    NSLog(@"selectedAudio Credit:%@", selectedAudio.credit);
+    NSLog(@"selectedAudio:%@", selectedAudio.filename);
 	[self.fileRowLocations setObject:indexPath forKey:selectedAudio.filename];
 	NSLog(@"After fileRowLocations");
 	 [self playAudio:selectedAudio];

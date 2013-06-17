@@ -77,5 +77,6 @@
 
 - (NSString *) scientificName;
 - (NSArray * ) sortedImages;
+- (NSArray * ) sortedAudio;
 @end
 

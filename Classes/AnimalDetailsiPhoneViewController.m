@@ -54,8 +54,8 @@
 	//27/02 reordered next two lines to here from about insertSubview/
 	pagingScrollView.view.frame = imageViewFrame;
 	pagingScrollView.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;	
-	[pagingScrollView newImageSet:[[self.animal images] allObjects]];
-//	[pagingScrollView newImageSet:[self.animal sortedImages]];
+
+	[pagingScrollView newImageSet:[self.animal sortedImages]];
 
 	pagingScrollView.delegate = self;
 	
@@ -133,7 +133,7 @@
 		//audioView.enabled = YES;
 		audioTab.enabled = YES;
 		audioList = [[AudioListViewController alloc] initWithNibName:@"AudioListViewController" bundle:nil];
-		audioList.audioFilesArray = (NSArray *)[[animal audios] allObjects];
+		audioList.audioFilesArray =  [animal sortedAudio];
 	}else {
 		//audioView.enabled = NO;
 		audioTab.enabled = NO;

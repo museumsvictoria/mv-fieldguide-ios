@@ -21,5 +21,12 @@
 @dynamic caption;
 @dynamic credit;
 @dynamic animal;
+@dynamic order;
 
+
+- (NSComparisonResult)compareOrder:(Audio *)i
+{
+	NSLog(@"inCompare");
+    return [self.order compare:i.order];
+}
 @end
