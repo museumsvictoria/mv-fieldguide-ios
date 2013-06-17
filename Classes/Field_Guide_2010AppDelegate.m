@@ -341,13 +341,13 @@
                 tmpAnimal.wcs = [tmpAnimalData objectForKey:@"wcs"];
             				// Set blank to non-threatened
 
-				if (tmpAnimal.lcs==nil||tmpAnimal.lcs ==@"") {
+				if (tmpAnimal.lcs==nil||[tmpAnimal.lcs isEqual:@""]) {
 					tmpAnimal.lcs = @"Not Listed";
 				}
-				if (tmpAnimal.ncs==nil||tmpAnimal.ncs ==@"") {
+				if (tmpAnimal.ncs==nil||[tmpAnimal.ncs isEqual:@""]) {
 					tmpAnimal.ncs = @"Not Listed";
 				}
-				if (tmpAnimal.wcs==nil||tmpAnimal.wcs ==@"") {
+				if (tmpAnimal.wcs==nil||[tmpAnimal.wcs isEqual:@""]) {
 					tmpAnimal.wcs = @"Not Listed";
 				}
 		

@@ -361,7 +361,11 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
+    self.delegate = nil;
+	self.images = nil;
+	self.scrollViewImageCredit = nil;
+	self.pagingScrollView = nil;
+	self.pageControl = nil;
     // Release any cached data, images, etc. that aren't in use.
 }
 
@@ -369,19 +373,7 @@
 
 
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-	self.delegate = nil;
-	self.images = nil;
-	self.scrollViewImageCredit = nil;
-	self.pagingScrollView = nil;
-	self.pageControl = nil;
-	
-	//currentPages = nil;
-	//queuedPages = nil;
-}
+
 
 
 - (void)dealloc {

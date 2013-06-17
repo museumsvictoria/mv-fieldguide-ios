@@ -149,6 +149,7 @@
 		A41E9EAE12F3967200102AC3 /* icon_vic.png in Resources */ = {isa = PBXBuildFile; fileRef = A41E9EAB12F3967200102AC3 /* icon_vic.png */; };
 		A41F549712EE147C00B9342F /* MVPagingScollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41F549512EE147C00B9342F /* MVPagingScollView.m */; };
 		A41F549812EE147C00B9342F /* MVPagingScollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41F549612EE147C00B9342F /* MVPagingScollView.xib */; };
+		A432EC51176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */; };
 		A43C16A0123CE0C100E4738C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43C169F123CE0C100E4738C /* AudioToolbox.framework */; };
 		A43C16A2123CE0DC00E4738C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43C16A1123CE0DC00E4738C /* AVFoundation.framework */; };
 		A441D495123308A8003C6F98 /* AnimalDetailiPad.m in Sources */ = {isa = PBXBuildFile; fileRef = A441D493123308A8003C6F98 /* AnimalDetailiPad.m */; };
@@ -341,6 +342,7 @@
 		A41F549412EE147C00B9342F /* MVPagingScollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPagingScollView.h; sourceTree = "<group>"; };
 		A41F549512EE147C00B9342F /* MVPagingScollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPagingScollView.m; sourceTree = "<group>"; };
 		A41F549612EE147C00B9342F /* MVPagingScollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVPagingScollView.xib; sourceTree = "<group>"; };
+		A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneLaunch-568h@2x.png"; sourceTree = "<group>"; };
 		A43C169F123CE0C100E4738C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A43C16A1123CE0DC00E4738C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A441D492123308A8003C6F98 /* AnimalDetailiPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalDetailiPad.h; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */,
 				61DC1A3413DD39F900F5A660 /* CustomSettings.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -973,6 +976,7 @@
 				6141AE6413F2269B0057716B /* kooka.jpg in Resources */,
 				6141AE6513F2269B0057716B /* kookasquare.jpg in Resources */,
 				6141AE6913F22AD10057716B /* bloop.mp3 in Resources */,
+				A432EC51176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

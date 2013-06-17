@@ -83,8 +83,10 @@
 	NSURL *baseURL = [NSURL fileURLWithPath:path];
 	NSString *aboutPath = [[NSBundle mainBundle] pathForResource:@"about" ofType:@"html"];
 	NSString *welcomePath = [[NSBundle mainBundle] pathForResource:@"welcome" ofType:@"html"];
-	NSMutableString *aboutHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:aboutPath];
-	NSMutableString *welcomeHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:welcomePath];
+
+	NSMutableString *aboutHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:aboutPath  encoding:NSUTF8StringEncoding error:nil];
+	
+    NSMutableString *welcomeHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:welcomePath encoding:NSUTF8StringEncoding error:nil];
 	[aboutHTML loadHTMLString:aboutHTMLCode	baseURL:baseURL];
 	[welcomeHTML loadHTMLString:welcomeHTMLCode baseURL:baseURL];
 	// 9:30pm 24/01/11 Scroll View Test
@@ -281,9 +283,9 @@
 	}else {
 		htmlPath = [[NSBundle mainBundle] pathForResource:@"template-ipad" ofType:@"html"];
 	}
-	
+
         
-	NSMutableString *baseHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:htmlPath];
+	NSMutableString *baseHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:htmlPath  encoding:NSUTF8StringEncoding error:nil];
 	
     //Common Names is a set of strings
 	NSMutableString *constructedCommonNames = [NSMutableString stringWithCapacity:1];
@@ -596,7 +598,7 @@
 //	NSLog(@"Start loadHTML");
 	NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"template-ipad" ofType:@"html"];
 
-	NSMutableString *loadedHTML = [[NSMutableString alloc] initWithContentsOfFile:htmlPath];
+	NSMutableString *loadedHTML = [[NSMutableString alloc] initWithContentsOfFile:htmlPath  encoding:NSUTF8StringEncoding error:nil];
 	[htmlPath release];
 	[loadedHTML autorelease];
 	return loadedHTML;
@@ -780,11 +782,7 @@
 }
 
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
+
 
 
 - (void)dealloc {

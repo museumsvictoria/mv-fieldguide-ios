@@ -78,10 +78,10 @@
 	distributionPath = [[NSBundle mainBundle] pathForResource:@"template-iphone-distribution" ofType:@"html"];
 	scarcityPath =[[NSBundle mainBundle] pathForResource:@"template-iphone-scarcity" ofType:@"html"];
 
-	
-	baseHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:htmlPath];
-	distributionHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:distributionPath];
-	scarcityHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:scarcityPath];
+
+	baseHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+	distributionHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:distributionPath  encoding:NSUTF8StringEncoding error:nil];
+	scarcityHTMLCode = [[NSMutableString alloc] initWithContentsOfFile:scarcityPath encoding:NSUTF8StringEncoding error:nil];
 
 
 	//Common Names is a set of strings
@@ -295,25 +295,7 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
--(IBAction)toggleInfo:(id)sender{
-		//make webview fill screen.
-	CGRect parentframe = self.view.frame;
-	if (animalDetails.frame.origin.y == 0) {
-		parentframe.origin.y = parentframe.size.height+1;
-	}
-
-	animalDetails.frame = parentframe;
-	
-}
-
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-	self.animal = nil;
+    	self.animal = nil;
 	[self.animalDetails setDelegate:nil];
 	[self.distributionWebView setDelegate:nil];
 	[self.scarcityWebView setDelegate:nil];
@@ -329,10 +311,20 @@
 	self.detailsTab = nil;
 	self.distributionTab = nil;
 	self.rarityTab = nil;
-
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    // Release any cached data, images, etc. that aren't in use.
 }
+
+-(IBAction)toggleInfo:(id)sender{
+		//make webview fill screen.
+	CGRect parentframe = self.view.frame;
+	if (animalDetails.frame.origin.y == 0) {
+		parentframe.origin.y = parentframe.size.height+1;
+	}
+
+	animalDetails.frame = parentframe;
+	
+}
+
 
 
 - (void)dealloc {

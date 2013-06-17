@@ -158,22 +158,22 @@
 		[cell textLabel].text = [tmpAnimal animalName];
 		[cell textLabel].font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
 		[cell textLabel].textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-	if ([tmpAnimal scientificName] != nil && [tmpAnimal scientificName]!=@" ") {
+	if ([tmpAnimal scientificName] != nil && ![[tmpAnimal scientificName] isEqual:@""]) {
 		[cell detailTextLabel].text = [tmpAnimal scientificName];
 		[cell detailTextLabel].font = [UIFont fontWithName:@"Helvetica-Oblique" size:14];
 		[cell detailTextLabel].textColor = [UIColor colorWithRed:0.258 green:.258 blue:.258 alpha:1];	
 	} else{
-		if (tmpAnimal.family!=nil && tmpAnimal.family!=@"") {
+		if (tmpAnimal.family!=nil && ![tmpAnimal.family isEqual:@""]) {
 			[cell detailTextLabel].text = [NSString stringWithFormat:@"Family: %@", tmpAnimal.family];
 			[cell detailTextLabel].font = [UIFont fontWithName:@"Helvetica" size:14];
 			[cell detailTextLabel].textColor = [UIColor colorWithRed:0.258 green:.258 blue:.258 alpha:1];	
 		} else {
-			if (tmpAnimal.order!=nil && tmpAnimal.order!=@"") {
+			if (tmpAnimal.order!=nil && ![tmpAnimal.order isEqual:@""]) {
 				[cell detailTextLabel].text = [NSString stringWithFormat:@"Order: %@", tmpAnimal.order];
 				[cell detailTextLabel].font = [UIFont fontWithName:@"Helvetica" size:14];
 				[cell detailTextLabel].textColor = [UIColor colorWithRed:0.258 green:.258 blue:.258 alpha:1];	
 			}else {
-				if (tmpAnimal.animalClass!=nil && tmpAnimal.animalClass!=@"") {
+				if (tmpAnimal.animalClass!=nil && ![tmpAnimal.animalClass isEqual:@""]) {
 					[cell detailTextLabel].text = [NSString stringWithFormat:@"Class: %@", tmpAnimal.animalClass];
 					[cell detailTextLabel].font = [UIFont fontWithName:@"Helvetica" size:14];
 					[cell detailTextLabel].textColor = [UIColor colorWithRed:0.258 green:.258 blue:.258 alpha:1];							
