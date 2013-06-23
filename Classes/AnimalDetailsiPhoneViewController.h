@@ -12,13 +12,13 @@
 
 #import <UIKit/UIKit.h>
 @class Animal;
-@class MVPagingScollView;
+@class MVPagingScrollView;
 @class AudioListViewController;
 
 @interface AnimalDetailsiPhoneViewController : UIViewController {
 
 	Animal *animal;
-	MVPagingScollView *pagingScrollView;
+	MVPagingScrollView *pagingScrollView;
 	UIWebView *animalDetails;
 	UIWebView *distributionWebView;
 	UIWebView *scarcityWebView;

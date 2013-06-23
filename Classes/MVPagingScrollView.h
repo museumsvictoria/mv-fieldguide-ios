@@ -1,5 +1,5 @@
 //
-//  MVPagingScollView.h
+//  MVPagingScrollView.h
 //  Field Guide 2010
 //
 //  Created by Simon Sherrin on 25/01/11.
@@ -14,7 +14,7 @@
 #import <UIKit/UIKit.h>
 @class ImageScrollView;
 @class Image;
-@interface MVPagingScollView : UIViewController  <UIScrollViewDelegate>{
+@interface MVPagingScrollView : UIViewController  <UIScrollViewDelegate>{
 			UIScrollView *pagingScrollView;
 			NSArray *images;
 			UIPageControl *pageControl;

@@ -20,7 +20,7 @@
 @class SearchTableViewController;
 @class CustomSearchViewController;
 @class PagingScrollView;
-@class MVPagingScollView;
+@class MVPagingScrollView;
 
 @interface AnimalDetailiPad : UIViewController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, UIScrollViewDelegate>  {
 	AVAudioPlayer *player;
@@ -71,7 +71,7 @@
 	UISplitViewController *parentSplitView;
 	IBOutlet UIWebView *aboutHTML;
 	IBOutlet UIWebView *welcomeHTML;
-	MVPagingScollView *testMVPagingScrollView;
+	MVPagingScrollView *testMVPagingScrollView;
 	IBOutlet UIImageView *webBackImage;
 	UIActivityIndicatorView *activityIndicator;
 	IBOutlet UIProgressView *progressView;

@@ -18,7 +18,7 @@
 #import "AudioListViewController.h"
 #import "TaxonGroup.h"
 #import "CustomSearchViewController.h"
-#import "MVPagingScollView.h"
+#import "MVPagingScrollView.h"
 #import "CommonName.h"
 #import "VariableStore.h"
 
@@ -58,7 +58,7 @@
     [singleFingerTap release];
 	
 	//self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-	self.animalImageControllers = [[NSMutableArray alloc] init];
+	self.animalImageControllers = [[[NSMutableArray alloc] init] autorelease];
 	contentDetailHolder.contentSize = CGSizeMake(contentDetailHolder.frame.size.width, 387);
 	toolbar.tintColor  = [VariableStore sharedInstance].toolbarTint;
 	titleLabel.text = NSLocalizedString(@"Welcome", nil) ;
@@ -92,7 +92,7 @@
 	// 9:30pm 24/01/11 Scroll View Test
 	
 
-	testMVPagingScrollView = [[MVPagingScollView alloc] initWithNibName:@"MVPagingScollView" bundle:nil];
+	testMVPagingScrollView = [[MVPagingScrollView alloc] initWithNibName:@"MVPagingScrollView" bundle:nil];
 	CGRect imageViewFrame = self.imageView.frame;
 
 	NSLog(@"FrameSize:%f,%f", imageViewFrame.size.width, imageViewFrame.size.height);
@@ -175,7 +175,7 @@
 	tmpAudioLocation = [[NSBundle mainBundle] pathForResource:[[[tmpArray objectAtIndex:0]  filename] stringByDeletingPathExtension] ofType:@"mp3"];
 	if (![[NSFileManager defaultManager] fileExistsAtPath:tmpAudioLocation]) return NO;
 	NSLog(@"Audio location %@", tmpAudioLocation);
-	self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:tmpAudioLocation] error:&error];
+	self.player = [[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:tmpAudioLocation] error:&error] autorelease];
 	if (!self.player)
 	{
 		NSLog(@"Error: %@", [error localizedDescription]);
@@ -599,9 +599,7 @@
 	NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"template-ipad" ofType:@"html"];
 
 	NSMutableString *loadedHTML = [[NSMutableString alloc] initWithContentsOfFile:htmlPath  encoding:NSUTF8StringEncoding error:nil];
-	[htmlPath release];
-	[loadedHTML autorelease];
-	return loadedHTML;
+	return [loadedHTML autorelease];
 	
 }
 
@@ -732,7 +730,6 @@
 	CGRect currentParentViewRect = self.view.bounds;
 	CGRect currentImageRect = imageView.frame;
 	CGRect currentParentFrame = self.view.frame;
-	BOOL imageViewWidthChanged;
 	
 	if (layoutControl.selectedSegmentIndex == 0) {
 		//Full Text Display
@@ -755,8 +752,6 @@
 
 			//UISplitViewCode
 			if (self.interfaceOrientation== UIInterfaceOrientationLandscapeLeft || self.interfaceOrientation == UIInterfaceOrientationLandscapeRight)  {
-
-				imageViewWidthChanged = YES;
 			}
 		}
 
