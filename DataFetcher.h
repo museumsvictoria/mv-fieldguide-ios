@@ -12,11 +12,12 @@
 @interface DataFetcher : NSObject {
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
-    NSPersistentStoreCoordinator *persistentStoreCoordinator;
 }
 
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 // Returns the 'singleton' instance of this class
-+ (id)sharedInstance;
++ (instancetype)sharedInstance;
 
 
 // Checks to see if any database exists on disk
@@ -27,14 +28,19 @@
 
 // Returns an array of objects from the database for the given Entity Name and Predicate
 - (NSArray *)fetchManagedObjectsForEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate;
+- (NSArray *)fetchManagedObjectsForEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate inContext:(NSManagedObjectContext *)context;
 
 // Returns a array of objects from the database for the given Entity Name and Predicate, sorted on the a given field
 - (NSArray *)fetchManagedObjectsForEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate withSortField:(NSString*)sortField;
+- (NSArray *)fetchManagedObjectsForEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate withSortField:(NSString*)sortField inContext:(NSManagedObjectContext *)context;
 
 // Returns an NSFetchedResultsController for a given Entity Name and Predicate
 - (NSFetchedResultsController *)fetchedResultsControllerForEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate sortField:(NSString*) fieldName;
+- (NSFetchedResultsController *)fetchedResultsControllerForEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate sortField:(NSString*) fieldName inContext:(NSManagedObjectContext *)context;
 
-//Returns an NSFetchedResultsController for a given Entity Name, Predicate and sectionNameKeyPath 
+//Returns an NSFetchedResultsController for a given Entity Name, Predicate and sectionNameKeyPath
 - (NSFetchedResultsController *)fetchedResultsControllerForEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate sortField:(NSString*)fieldName sectionNameKeyPath:(NSString*)keyPath;
+- (NSFetchedResultsController *)fetchedResultsControllerForEntity:(NSString*)entityName withPredicate:(NSPredicate*)predicate sortField:(NSString*)fieldName sectionNameKeyPath:(NSString*)keyPath inContext:(NSManagedObjectContext *)context;
+
 
 @end
