@@ -13,10 +13,10 @@
 
 #import "AnimalDetailsiPhoneViewController.h"
 #import "Animal.h"
-#import "MVPagingScollView.h"
+#import "MVPagingScrollView.h"
 #import "CommonName.h"
 #import "AudioListViewController.h"
-#import "MVPagingScollView.h"
+#import "MVPagingScrollView.h"
 
 
 @implementation AnimalDetailsiPhoneViewController
@@ -43,7 +43,7 @@
 	self.hidesBottomBarWhenPushed = YES;
 	self.navigationController.navigationBar.translucent = YES;
 	//Setup ImageView
-	pagingScrollView = [[MVPagingScollView alloc] initWithNibName:@"MVPagingScollView" bundle:nil];
+	pagingScrollView = [[MVPagingScrollView alloc] initWithNibName:@"MVPagingScrollView" bundle:nil];
 	//CGRect imageViewFrame = self.view.frame;
 	CGRect imageViewFrame = imageView.frame;
 
