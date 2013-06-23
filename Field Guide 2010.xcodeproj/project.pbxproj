@@ -147,8 +147,8 @@
 		A41E9EAC12F3967200102AC3 /* icon_aus.png in Resources */ = {isa = PBXBuildFile; fileRef = A41E9EA912F3967200102AC3 /* icon_aus.png */; };
 		A41E9EAD12F3967200102AC3 /* icon_earth.png in Resources */ = {isa = PBXBuildFile; fileRef = A41E9EAA12F3967200102AC3 /* icon_earth.png */; };
 		A41E9EAE12F3967200102AC3 /* icon_vic.png in Resources */ = {isa = PBXBuildFile; fileRef = A41E9EAB12F3967200102AC3 /* icon_vic.png */; };
-		A41F549712EE147C00B9342F /* MVPagingScollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41F549512EE147C00B9342F /* MVPagingScollView.m */; };
-		A41F549812EE147C00B9342F /* MVPagingScollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41F549612EE147C00B9342F /* MVPagingScollView.xib */; };
+		A41F549712EE147C00B9342F /* MVPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41F549512EE147C00B9342F /* MVPagingScrollView.m */; };
+		A41F549812EE147C00B9342F /* MVPagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41F549612EE147C00B9342F /* MVPagingScrollView.xib */; };
 		A432EC51176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */; };
 		A43C16A0123CE0C100E4738C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43C169F123CE0C100E4738C /* AudioToolbox.framework */; };
 		A43C16A2123CE0DC00E4738C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43C16A1123CE0DC00E4738C /* AVFoundation.framework */; };
@@ -337,9 +337,9 @@
 		A41E9EA912F3967200102AC3 /* icon_aus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_aus.png; sourceTree = "<group>"; };
 		A41E9EAA12F3967200102AC3 /* icon_earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_earth.png; sourceTree = "<group>"; };
 		A41E9EAB12F3967200102AC3 /* icon_vic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_vic.png; sourceTree = "<group>"; };
-		A41F549412EE147C00B9342F /* MVPagingScollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPagingScollView.h; sourceTree = "<group>"; };
-		A41F549512EE147C00B9342F /* MVPagingScollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPagingScollView.m; sourceTree = "<group>"; };
-		A41F549612EE147C00B9342F /* MVPagingScollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVPagingScollView.xib; sourceTree = "<group>"; };
+		A41F549412EE147C00B9342F /* MVPagingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPagingScrollView.h; sourceTree = "<group>"; };
+		A41F549512EE147C00B9342F /* MVPagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPagingScrollView.m; sourceTree = "<group>"; };
+		A41F549612EE147C00B9342F /* MVPagingScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVPagingScrollView.xib; sourceTree = "<group>"; };
 		A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneLaunch-568h@2x.png"; sourceTree = "<group>"; };
 		A43C169F123CE0C100E4738C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A43C16A1123CE0DC00E4738C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -418,9 +418,9 @@
 				A4A25D2612D97F5E003E45D2 /* SearchTableViewController.h */,
 				A4A25D2712D97F5E003E45D2 /* SearchTableViewController.m */,
 				A4A25D2812D97F5E003E45D2 /* SearchTableViewController.xib */,
-				A41F549412EE147C00B9342F /* MVPagingScollView.h */,
-				A41F549512EE147C00B9342F /* MVPagingScollView.m */,
-				A41F549612EE147C00B9342F /* MVPagingScollView.xib */,
+				A41F549412EE147C00B9342F /* MVPagingScrollView.h */,
+				A41F549512EE147C00B9342F /* MVPagingScrollView.m */,
+				A41F549612EE147C00B9342F /* MVPagingScrollView.xib */,
 				A499B1ED1313AFCC0025001F /* iPhone Specific View Controllers */,
 				A49FF6701339BC480088A5D4 /* VariableStore.h */,
 				A49FF6711339BC480088A5D4 /* VariableStore.m */,
@@ -849,7 +849,7 @@
 				A46F9AA712D4886500819E65 /* ViewImage.png in Resources */,
 				A4A25D2A12D97F5E003E45D2 /* SearchTableViewController.xib in Resources */,
 				A4D3C4D812DA52B100BFC300 /* CustomSearchViewController.xib in Resources */,
-				A41F549812EE147C00B9342F /* MVPagingScollView.xib in Resources */,
+				A41F549812EE147C00B9342F /* MVPagingScrollView.xib in Resources */,
 				A499798312EFCBC80032383D /* MainIpad2.xib in Resources */,
 				A41E9EAC12F3967200102AC3 /* icon_aus.png in Resources */,
 				A41E9EAD12F3967200102AC3 /* icon_earth.png in Resources */,
@@ -998,7 +998,7 @@
 				A4A25D2912D97F5E003E45D2 /* SearchTableViewController.m in Sources */,
 				A4D3C4D712DA52B100BFC300 /* CustomSearchViewController.m in Sources */,
 				A406B5B812ED640B0020E042 /* ImageScrollView.m in Sources */,
-				A41F549712EE147C00B9342F /* MVPagingScollView.m in Sources */,
+				A41F549712EE147C00B9342F /* MVPagingScrollView.m in Sources */,
 				A444A29612F4EFAA001B003C /* AnimalDetailsiPhoneViewController.m in Sources */,
 				A41877CF130D1D3D00009FC0 /* iphoneAboutViewController.m in Sources */,
 				A418782E130D305E00009FC0 /* AnimalAtoZViewController.m in Sources */,

@@ -18,7 +18,7 @@
 #import "AudioListViewController.h"
 #import "TaxonGroup.h"
 #import "CustomSearchViewController.h"
-#import "MVPagingScollView.h"
+#import "MVPagingScrollView.h"
 #import "CommonName.h"
 #import "VariableStore.h"
 
@@ -92,7 +92,7 @@
 	// 9:30pm 24/01/11 Scroll View Test
 	
 
-	testMVPagingScrollView = [[MVPagingScollView alloc] initWithNibName:@"MVPagingScollView" bundle:nil];
+	testMVPagingScrollView = [[MVPagingScrollView alloc] initWithNibName:@"MVPagingScrollView" bundle:nil];
 	CGRect imageViewFrame = self.imageView.frame;
 
 	NSLog(@"FrameSize:%f,%f", imageViewFrame.size.width, imageViewFrame.size.height);
