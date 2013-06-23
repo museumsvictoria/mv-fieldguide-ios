@@ -31,7 +31,7 @@
 
 - (id)initWithAnimalImage:(Image *)newImage{
 
-	if (self == [super initWithNibName:@"AnimalImageController" bundle:nil]) {
+	if ((self = [super initWithNibName:@"AnimalImageController" bundle:nil])) {
 		NSLog(@"Before setting current Image in init");
 		self.currentImage = newImage;
 		parentIndex = 0;

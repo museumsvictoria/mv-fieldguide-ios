@@ -29,6 +29,8 @@
 #import "VariableStore.h"
 #import "DataVersion.h"
 
+NSString * const DidRefreshDatabaseNotificationName = @"FieldGuideDidRefreshDatabase";
+
 @implementation Field_Guide_2010AppDelegate
 
 @synthesize window;
@@ -115,6 +117,7 @@
 		taxonListView.title = NSLocalizedString(@"Animal Type", nil) ;
 		taxonListView.rightViewReference = self.rightViewReference;
 		[navigationController pushViewController:taxonListView animated:NO];
+        [taxonListView release];
 		
 		[window setRootViewController:splitviewController];
 		if (buildingDatabase) {
@@ -179,7 +182,6 @@
 	NSArray *tabBarVCArray = [NSArray arrayWithObjects:navigationController,aToZNavController,searchNavController,aboutVC, nil];
 	tabBarController.viewControllers = tabBarVCArray;
 	NSLog(@"In Tab View Controller");
-	//[window addSubview:tabBarController.view];
     [window setRootViewController:tabBarController];
 	[aboutVC release];
 	[customSearchViewController release];
@@ -206,6 +208,12 @@
         [currentContext deleteObject:tmpAnimal];
     }
     
+    
+    NSArray *dataVersions = [[DataFetcher sharedInstance] fetchManagedObjectsForEntity:@"DataVersion" withPredicate:nil];
+    for (DataVersion *tmpVersion in dataVersions){
+        [currentContext deleteObject:tmpVersion];
+        
+    }
          
     NSLog(@"About to Save");
     NSError *saveError;
@@ -223,11 +231,12 @@
 	
 	//Setup pool
 	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-	NSUInteger totalNumberOfRecords;
+    
+    NSManagedObjectContext *backgroundContext = [[[NSManagedObjectContext alloc] init] autorelease];
+    backgroundContext.persistentStoreCoordinator = DataFetcher.sharedInstance.persistentStoreCoordinator;
 	
-	int currentRecord = 1;
+	NSUInteger currentRecord = 1;
 	NSLog(@"No Database Found");
-	NSManagedObjectContext *currentContext = [[DataFetcher sharedInstance] managedObjectContext];	
 	NSBundle *thisBundle = [NSBundle bundleForClass:[self class]];
 	NSString *commonArrayPath;
 	if ((commonArrayPath =[thisBundle pathForResource:@"animalData" ofType:@"plist"])) {
@@ -240,7 +249,7 @@
             //in animalData, the database will be reloaded everytime the user starts the application. 
             //May make the versionID in animalData purely for human reference.
             NSString *loadingVersionID = [loadValues objectForKey:@"versionID"];
-            DataVersion *loadingDataVersion = [NSEntityDescription insertNewObjectForEntityForName:@"DataVersion" inManagedObjectContext:currentContext];
+            DataVersion *loadingDataVersion = [NSEntityDescription insertNewObjectForEntityForName:@"DataVersion" inManagedObjectContext:backgroundContext];
             loadingDataVersion.versionID = loadingVersionID;
             
 			//Create Taxon Values
@@ -248,11 +257,11 @@
 			NSArray *taxonArray = [loadValues objectForKey:@"taxonList"];
             for (NSDictionary *tmpTaxonDict in taxonArray) {
 				
-				TaxonGroup *testTaxon1 = [NSEntityDescription insertNewObjectForEntityForName:@"TaxonGroup" inManagedObjectContext:currentContext];
+				TaxonGroup *taxonGroup = [NSEntityDescription insertNewObjectForEntityForName:@"TaxonGroup" inManagedObjectContext:backgroundContext];
 				//testTaxon1.taxonID = ;
-				testTaxon1.taxonName = [tmpTaxonDict objectForKey:@"taxonName"];
-				testTaxon1.standardImage = [tmpTaxonDict objectForKey:@"standardImage"];
-				testTaxon1.highlightedImage = [tmpTaxonDict objectForKey:@"highlightedImage"];
+				taxonGroup.taxonName = [tmpTaxonDict objectForKey:@"taxonName"];
+				taxonGroup.standardImage = [tmpTaxonDict objectForKey:@"standardImage"];
+				taxonGroup.highlightedImage = [tmpTaxonDict objectForKey:@"highlightedImage"];
 				NSLog(@"Taxon Name Set");
 				
 				//[testTaxon1 release];
@@ -261,14 +270,14 @@
 			//Load Animal Details
 			//NSArray *animalArray = [loadValues objectAtIndex:1];
 			NSArray *animalArray = [loadValues objectForKey:@"animalData"];
-            totalNumberOfRecords = [animalArray count];
+            NSUInteger totalNumberOfRecords = [animalArray count];
 			for (NSDictionary *tmpAnimalData in animalArray){
 				NSLog(@"Before count updated");
 				currentRecord += 1;
-				NSLog(@"Before call to Main Thread");
-				[self performSelectorOnMainThread:@selector(updateiPhoneLoadProgress:) withObject:[NSNumber numberWithInt:currentRecord]  waitUntilDone:NO];
-				NSLog(@"After Selector");
-				Animal *tmpAnimal = [NSEntityDescription insertNewObjectForEntityForName:@"Animal" inManagedObjectContext:currentContext];
+                CGFloat progress = currentRecord/totalNumberOfRecords;
+				[self performSelectorOnMainThread:@selector(updateiPhoneLoadProgress:) withObject:@(progress) waitUntilDone:NO];
+                if ([[tmpAnimalData allKeys] count] == 0) continue;
+				Animal *tmpAnimal = [NSEntityDescription insertNewObjectForEntityForName:@"Animal" inManagedObjectContext:backgroundContext];
 				tmpAnimal.diet = [tmpAnimalData objectForKey:@"diet"];
 				tmpAnimal.biology = [tmpAnimalData objectForKey:@"biology"];
 				tmpAnimal.habitat = [tmpAnimalData objectForKey:@"habitat"];
@@ -284,7 +293,7 @@
 						//Add Common Names
 						for (int i=1; i<=([commonNames count]-1); i++) {
 							//Add Common Name
-							CommonName *localCommon =[NSEntityDescription insertNewObjectForEntityForName:@"CommonName" inManagedObjectContext:currentContext];
+							CommonName *localCommon =[NSEntityDescription insertNewObjectForEntityForName:@"CommonName" inManagedObjectContext:backgroundContext];
 							localCommon.commonName = [commonNames objectAtIndex:i];
 							[tmpAnimal addCommonNamesObject:localCommon];
 						}
@@ -305,7 +314,7 @@
 						
 				
 				NSPredicate *taxonPredicate = [NSPredicate predicateWithFormat:@"taxonName=%@", [tmpAnimalData objectForKey:@"taxonGroup"]];		
-				NSArray *currenttaxon = [[DataFetcher sharedInstance] fetchManagedObjectsForEntity:@"TaxonGroup" withPredicate:taxonPredicate];
+				NSArray *currenttaxon = [[DataFetcher sharedInstance] fetchManagedObjectsForEntity:@"TaxonGroup" withPredicate:taxonPredicate inContext:backgroundContext];
 				NSLog(@"TaxonName %@, Taxon Count %d", [tmpAnimalData objectForKey:@"taxonGroup"], [currenttaxon count]);
 				if ([currenttaxon count] > 0) {
 					TaxonGroup *localTaxon = [currenttaxon objectAtIndex:0];
@@ -315,14 +324,14 @@
 					NSString *tmpSubTaxon = [tmpAnimalData objectForKey:@"taxonSubgroup"];
 					tmpAnimal.subTaxon = tmpSubTaxon;
 					NSPredicate *subTaxonPredicate = [NSPredicate predicateWithFormat:@"subTaxonName=%@", tmpSubTaxon];
-					NSArray *existingSubTaxon = [[DataFetcher sharedInstance] fetchManagedObjectsForEntity:@"SubTaxonGroup" withPredicate:subTaxonPredicate];
+					NSArray *existingSubTaxon = [[DataFetcher sharedInstance] fetchManagedObjectsForEntity:@"SubTaxonGroup" withPredicate:subTaxonPredicate inContext:backgroundContext];
 					if ([existingSubTaxon count] >0){
 						//Don't need to create SubTaxon, already exists. Assumption: SubTaxon Names are unique across all taxon groups
 						//If not, then need to change data model. Add two way many to many relationship (possible?)
 						
 					}else {
 						//subTaxon doesn't currently exist, create and add to Taxon
-						SubTaxonGroup *localSubTaxon = [NSEntityDescription insertNewObjectForEntityForName:@"SubTaxonGroup" inManagedObjectContext:currentContext];
+						SubTaxonGroup *localSubTaxon = [NSEntityDescription insertNewObjectForEntityForName:@"SubTaxonGroup" inManagedObjectContext:backgroundContext];
 						localSubTaxon.subTaxonName = tmpSubTaxon;
 						[localTaxon addSubTaxonsObject:localSubTaxon];
 					}
@@ -341,13 +350,13 @@
                 tmpAnimal.wcs = [tmpAnimalData objectForKey:@"wcs"];
             				// Set blank to non-threatened
 
-				if (tmpAnimal.lcs==nil||[tmpAnimal.lcs isEqual:@""]) {
+				if (!tmpAnimal.lcs.length) {
 					tmpAnimal.lcs = @"Not Listed";
 				}
-				if (tmpAnimal.ncs==nil||[tmpAnimal.ncs isEqual:@""]) {
+				if (!tmpAnimal.ncs.length) {
 					tmpAnimal.ncs = @"Not Listed";
 				}
-				if (tmpAnimal.wcs==nil||[tmpAnimal.wcs isEqual:@""]) {
+				if (!tmpAnimal.wcs.length) {
 					tmpAnimal.wcs = @"Not Listed";
 				}
 		
@@ -357,11 +366,11 @@
 				int counter = 0;
 				for (NSDictionary *tmpImageData in tmpImageArray){
 					counter +=1;
-					Image *tmpImage = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:currentContext];
+					Image *tmpImage = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:backgroundContext];
 					tmpImage.filename = [tmpImageData objectForKey:@"filename"];
 					tmpImage.credit = [tmpImageData objectForKey:@"credit"];
 					tmpImage.order = [NSNumber numberWithInt:counter];
-					//NSLog(@"Image Order: %d", tmpImage.order);
+					NSLog(@"Image Order: %i", tmpImage.order.integerValue);
 					//tmpImage.caption = [tmpImageData objectForKey:@"Caption"];
 					[tmpAnimal addImagesObject:tmpImage];
 					//[tmpImage release];
@@ -385,9 +394,9 @@
                 int audiocounter = 0;
                 for (NSDictionary *tmpAudioData in tmpAudioArray) {
                     audiocounter +=1;
-                    Audio *tmpAudio = [NSEntityDescription insertNewObjectForEntityForName:@"Audio" inManagedObjectContext:currentContext];
-                    tmpAudio.filename = [tmpAudioData objectForKey:@"filename"];
-                    tmpAudio.credit = [tmpAudioData objectForKey:@"credit"];
+					Audio *tmpAudio = [NSEntityDescription insertNewObjectForEntityForName:@"Audio" inManagedObjectContext:backgroundContext];
+					tmpAudio.filename = [tmpAudioData objectForKey:@"filename"];
+					tmpAudio.credit = [tmpAudioData objectForKey:@"credit"];
                     tmpAudio.order = [NSNumber numberWithInt:audiocounter];
                     [tmpAnimal addAudiosObject:tmpAudio];
                 }
@@ -398,7 +407,7 @@
 			
 			NSLog(@"About to Save");
 			NSError *saveError;
-			[currentContext save:&saveError];
+			[backgroundContext save:&saveError];
 
 			
 		}
@@ -409,18 +418,21 @@
 
 	[pool drain];
 
-	
-	
+	[NSNotificationCenter.defaultCenter postNotificationName:DidRefreshDatabaseNotificationName
+                                                      object:nil];
 }
 
-- (void) updateiPhoneLoadProgress:(id)value{
+- (void) updateiPhoneLoadProgress:(id)value {
+    CGFloat progress = [value floatValue];
+    
 	NSNumber *currentCount = (NSNumber *) value;
 	NSLog(@"Current Count, %d", [currentCount intValue]);
-    // TODO: Change 700 to be count of total animal entries in animalData.plist
-	float progress = [currentCount floatValue]/700.0f;
-	NSLog(@"Progress: %f", progress);
-	[iPhoneLoaderView updateProgressBar:progress];
-	[rightViewReference updateProgressBar:progress];
+    NSLog(@"Progress: %f", progress);
+    
+    if (progress > 0.0 && progress < 1.0) {
+        [iPhoneLoaderView updateProgressBar:progress];
+        [rightViewReference updateProgressBar:progress];
+    }
 }
 
 
@@ -545,11 +557,12 @@
     
     NSURL *storeURL = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"Field_Guide_2010.sqlite"]];
     
-	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                             
-                             [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
-                             
-                             [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+    
+    
+	NSDictionary *options = @{
+                           NSMigratePersistentStoresAutomaticallyOption: @YES,
+                           NSInferMappingModelAutomaticallyOption: @YES
+                           };
 	NSError *error = nil;
     persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]){

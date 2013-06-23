@@ -147,8 +147,8 @@
 		A41E9EAC12F3967200102AC3 /* icon_aus.png in Resources */ = {isa = PBXBuildFile; fileRef = A41E9EA912F3967200102AC3 /* icon_aus.png */; };
 		A41E9EAD12F3967200102AC3 /* icon_earth.png in Resources */ = {isa = PBXBuildFile; fileRef = A41E9EAA12F3967200102AC3 /* icon_earth.png */; };
 		A41E9EAE12F3967200102AC3 /* icon_vic.png in Resources */ = {isa = PBXBuildFile; fileRef = A41E9EAB12F3967200102AC3 /* icon_vic.png */; };
-		A41F549712EE147C00B9342F /* MVPagingScollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41F549512EE147C00B9342F /* MVPagingScollView.m */; };
-		A41F549812EE147C00B9342F /* MVPagingScollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41F549612EE147C00B9342F /* MVPagingScollView.xib */; };
+		A41F549712EE147C00B9342F /* MVPagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41F549512EE147C00B9342F /* MVPagingScrollView.m */; };
+		A41F549812EE147C00B9342F /* MVPagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41F549612EE147C00B9342F /* MVPagingScrollView.xib */; };
 		A432EC51176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */; };
 		A43C16A0123CE0C100E4738C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43C169F123CE0C100E4738C /* AudioToolbox.framework */; };
 		A43C16A2123CE0DC00E4738C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A43C16A1123CE0DC00E4738C /* AVFoundation.framework */; };
@@ -156,7 +156,6 @@
 		A441D496123308A8003C6F98 /* AnimalDetailiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A441D494123308A8003C6F98 /* AnimalDetailiPad.xib */; };
 		A444A29612F4EFAA001B003C /* AnimalDetailsiPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A444A29412F4EFAA001B003C /* AnimalDetailsiPhoneViewController.m */; };
 		A444A29712F4EFAA001B003C /* AnimalDetailsiPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A444A29512F4EFAA001B003C /* AnimalDetailsiPhoneViewController.xib */; };
-		A452AF371217C4C700E5166A /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A452AF361217C4C700E5166A /* MainWindow-iPad.xib */; };
 		A46EA27A123F9A0B0049005A /* AnimalImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46EA278123F9A0B0049005A /* AnimalImageController.m */; };
 		A46EA27B123F9A0B0049005A /* AnimalImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46EA279123F9A0B0049005A /* AnimalImageController.xib */; };
 		A46F9AA712D4886500819E65 /* ViewImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A46F9AA612D4886500819E65 /* ViewImage.png */; };
@@ -176,7 +175,6 @@
 		A4A25D2A12D97F5E003E45D2 /* SearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A25D2812D97F5E003E45D2 /* SearchTableViewController.xib */; };
 		A4D3C4D712DA52B100BFC300 /* CustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3C4D512DA52B100BFC300 /* CustomSearchViewController.m */; };
 		A4D3C4D812DA52B100BFC300 /* CustomSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D3C4D612DA52B100BFC300 /* CustomSearchViewController.xib */; };
-		A4F98187123232AC001A52C7 /* MainIpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F98186123232AC001A52C7 /* MainIpad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -339,9 +337,9 @@
 		A41E9EA912F3967200102AC3 /* icon_aus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_aus.png; sourceTree = "<group>"; };
 		A41E9EAA12F3967200102AC3 /* icon_earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_earth.png; sourceTree = "<group>"; };
 		A41E9EAB12F3967200102AC3 /* icon_vic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_vic.png; sourceTree = "<group>"; };
-		A41F549412EE147C00B9342F /* MVPagingScollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPagingScollView.h; sourceTree = "<group>"; };
-		A41F549512EE147C00B9342F /* MVPagingScollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPagingScollView.m; sourceTree = "<group>"; };
-		A41F549612EE147C00B9342F /* MVPagingScollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVPagingScollView.xib; sourceTree = "<group>"; };
+		A41F549412EE147C00B9342F /* MVPagingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPagingScrollView.h; sourceTree = "<group>"; };
+		A41F549512EE147C00B9342F /* MVPagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPagingScrollView.m; sourceTree = "<group>"; };
+		A41F549612EE147C00B9342F /* MVPagingScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MVPagingScrollView.xib; sourceTree = "<group>"; };
 		A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhoneLaunch-568h@2x.png"; sourceTree = "<group>"; };
 		A43C169F123CE0C100E4738C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A43C16A1123CE0DC00E4738C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -351,7 +349,6 @@
 		A444A29312F4EFAA001B003C /* AnimalDetailsiPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalDetailsiPhoneViewController.h; sourceTree = "<group>"; };
 		A444A29412F4EFAA001B003C /* AnimalDetailsiPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalDetailsiPhoneViewController.m; sourceTree = "<group>"; };
 		A444A29512F4EFAA001B003C /* AnimalDetailsiPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDetailsiPhoneViewController.xib; sourceTree = "<group>"; };
-		A452AF361217C4C700E5166A /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		A46EA277123F9A0B0049005A /* AnimalImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalImageController.h; sourceTree = "<group>"; };
 		A46EA278123F9A0B0049005A /* AnimalImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalImageController.m; sourceTree = "<group>"; };
 		A46EA279123F9A0B0049005A /* AnimalImageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalImageController.xib; sourceTree = "<group>"; };
@@ -377,7 +374,6 @@
 		A4D3C4D412DA52B100BFC300 /* CustomSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchViewController.h; sourceTree = "<group>"; };
 		A4D3C4D512DA52B100BFC300 /* CustomSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchViewController.m; sourceTree = "<group>"; };
 		A4D3C4D612DA52B100BFC300 /* CustomSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSearchViewController.xib; sourceTree = "<group>"; };
-		A4F98186123232AC001A52C7 /* MainIpad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainIpad.xib; path = Classes/MainIpad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +396,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				61E8B66A12053B49005470CD /* DataFetcher */,
 				A406B5B612ED640B0020E042 /* ImageScrollView.h */,
 				A406B5B712ED640B0020E042 /* ImageScrollView.m */,
 				A499B1EC1313AFAA0025001F /* CoreData Classes */,
@@ -421,9 +418,9 @@
 				A4A25D2612D97F5E003E45D2 /* SearchTableViewController.h */,
 				A4A25D2712D97F5E003E45D2 /* SearchTableViewController.m */,
 				A4A25D2812D97F5E003E45D2 /* SearchTableViewController.xib */,
-				A41F549412EE147C00B9342F /* MVPagingScollView.h */,
-				A41F549512EE147C00B9342F /* MVPagingScollView.m */,
-				A41F549612EE147C00B9342F /* MVPagingScollView.xib */,
+				A41F549412EE147C00B9342F /* MVPagingScrollView.h */,
+				A41F549512EE147C00B9342F /* MVPagingScrollView.m */,
+				A41F549612EE147C00B9342F /* MVPagingScrollView.xib */,
 				A499B1ED1313AFCC0025001F /* iPhone Specific View Controllers */,
 				A49FF6701339BC480088A5D4 /* VariableStore.h */,
 				A49FF6711339BC480088A5D4 /* VariableStore.m */,
@@ -442,15 +439,12 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */,
-				61DC1A3413DD39F900F5A660 /* CustomSettings.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				A452AF351217C4BE00E5166A /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				A43C169F123CE0C100E4738C /* AudioToolbox.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -467,16 +461,16 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				611CE29D13EF753900BE6474 /* AnimalData */,
-				6117BE5413DE874F009FD914 /* HTML Resources */,
-				6117BE5313DE86CC009FD914 /* Interface Icons */,
 				A48ED2A4130654410086902C /* About and Welcome Screens */,
+				611CE29D13EF753900BE6474 /* AnimalData */,
 				A48ED2AE130658630086902C /* Audio Icons */,
 				A43C153B123CC94900E4738C /* AudioFiles */,
+				61DC1A3413DD39F900F5A660 /* CustomSettings.plist */,
 				8D1107310486CEB800E47090 /* Field_Guide_2010-Info.plist */,
 				28D3F201112F7DC200FD0661 /* Field_Guide_2010.xcdatamodeld */,
-				61E8B66A12053B49005470CD /* DataFetcher */,
+				6117BE5413DE874F009FD914 /* HTML Resources */,
 				61CF5B33120662AA00964A9F /* Images */,
+				6117BE5313DE86CC009FD914 /* Interface Icons */,
 				A48ED2C1130658950086902C /* iPhoneTabIcons */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				A44DB96812423BA1004AC73D /* Map Images */,
@@ -489,6 +483,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A43C169F123CE0C100E4738C /* AudioToolbox.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -588,11 +583,13 @@
 				61E8B66C12053B73005470CD /* DataFetcher.m */,
 			);
 			name = DataFetcher;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A4187903130D571100009FC0 /* SplashScreens */ = {
 			isa = PBXGroup;
 			children = (
+				A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */,
 				61C97FC313F21EFA00892FC4 /* iPhoneLaunch.png */,
 				61C97FC413F21EFA00892FC4 /* iPhoneLaunch@2x.png */,
 				61C97FBF13F21E8D00892FC4 /* iPadDefault-Landscape.png */,
@@ -622,8 +619,6 @@
 			isa = PBXGroup;
 			children = (
 				A499798212EFCBC80032383D /* MainIpad2.xib */,
-				A4F98186123232AC001A52C7 /* MainIpad.xib */,
-				A452AF361217C4C700E5166A /* MainWindow-iPad.xib */,
 			);
 			name = "Resources-iPad";
 			sourceTree = "<group>";
@@ -812,7 +807,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Field Guide 2010" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -842,8 +837,6 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
 				61E8B669120536A7005470CD /* TaxonListViewController.xib in Resources */,
-				A452AF371217C4C700E5166A /* MainWindow-iPad.xib in Resources */,
-				A4F98187123232AC001A52C7 /* MainIpad.xib in Resources */,
 				A441D496123308A8003C6F98 /* AnimalDetailiPad.xib in Resources */,
 				A46EA27B123F9A0B0049005A /* AnimalImageController.xib in Resources */,
 				A41B2C6312A10A47004F4D83 /* AudioListViewController.xib in Resources */,
@@ -856,7 +849,7 @@
 				A46F9AA712D4886500819E65 /* ViewImage.png in Resources */,
 				A4A25D2A12D97F5E003E45D2 /* SearchTableViewController.xib in Resources */,
 				A4D3C4D812DA52B100BFC300 /* CustomSearchViewController.xib in Resources */,
-				A41F549812EE147C00B9342F /* MVPagingScollView.xib in Resources */,
+				A41F549812EE147C00B9342F /* MVPagingScrollView.xib in Resources */,
 				A499798312EFCBC80032383D /* MainIpad2.xib in Resources */,
 				A41E9EAC12F3967200102AC3 /* icon_aus.png in Resources */,
 				A41E9EAD12F3967200102AC3 /* icon_earth.png in Resources */,
@@ -1005,7 +998,7 @@
 				A4A25D2912D97F5E003E45D2 /* SearchTableViewController.m in Sources */,
 				A4D3C4D712DA52B100BFC300 /* CustomSearchViewController.m in Sources */,
 				A406B5B812ED640B0020E042 /* ImageScrollView.m in Sources */,
-				A41F549712EE147C00B9342F /* MVPagingScollView.m in Sources */,
+				A41F549712EE147C00B9342F /* MVPagingScrollView.m in Sources */,
 				A444A29612F4EFAA001B003C /* AnimalDetailsiPhoneViewController.m in Sources */,
 				A41877CF130D1D3D00009FC0 /* iphoneAboutViewController.m in Sources */,
 				A418782E130D305E00009FC0 /* AnimalAtoZViewController.m in Sources */,
@@ -1030,7 +1023,8 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Field_Guide_2010_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+
 				INFOPLIST_FILE = "Field_Guide_2010-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "Field Guide 2010";
@@ -1048,7 +1042,8 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Field_Guide_2010_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+
 				INFOPLIST_FILE = "Field_Guide_2010-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "Field Guide 2010";
@@ -1082,7 +1077,8 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Field_Guide_2010_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+
 				INFOPLIST_FILE = "Field_Guide_2010-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "Field Guide 2010";
@@ -1116,7 +1112,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Field_Guide_2010_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Field_Guide_2010-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "Field Guide 2010";

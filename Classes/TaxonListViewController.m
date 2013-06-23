@@ -17,6 +17,8 @@
 //#import "AnimalListViewController.h"
 //#import "FetchedAnimalListViewController.h"
 #import "SimpleFetchedAnimalListViewController.h"
+#import "Field_Guide_2010AppDelegate.h"
+
 @implementation TaxonListViewController
 
 
@@ -35,7 +37,13 @@
 	[taxonController performFetch:&fetchError];
 	[taxonController retain];
 
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(refresh) name:DidRefreshDatabaseNotificationName object:nil];
+}
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 
@@ -204,9 +212,9 @@
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+- (void)refresh {
+    [taxonController performFetch:nil];
+    [self.tableView reloadData];
 }
 
 
@@ -214,6 +222,8 @@
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){ 
 		[rightViewReference release];
 	}
+    
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 
     [super dealloc];
 }

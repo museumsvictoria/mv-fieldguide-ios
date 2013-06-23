@@ -32,6 +32,8 @@
 	BOOL isDatabaseComplete;
 }
 
+extern NSString * const DidRefreshDatabaseNotificationName;
+
 @property (nonatomic, retain) IBOutlet AnimalDetailiPad *rightViewReference;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
