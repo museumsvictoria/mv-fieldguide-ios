@@ -231,7 +231,7 @@
 			//Exisiting player in place, set delegate to nil
 			self.player.delegate = nil;
 		}
-		self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:tmpAudioLocation] error:&error];
+		self.player = [[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:tmpAudioLocation] error:&error] autorelease];
 		if (!self.player)
 		{
 			NSLog(@"Error: %@", [error localizedDescription]);
