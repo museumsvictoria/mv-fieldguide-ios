@@ -156,7 +156,6 @@
 		A441D496123308A8003C6F98 /* AnimalDetailiPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A441D494123308A8003C6F98 /* AnimalDetailiPad.xib */; };
 		A444A29612F4EFAA001B003C /* AnimalDetailsiPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A444A29412F4EFAA001B003C /* AnimalDetailsiPhoneViewController.m */; };
 		A444A29712F4EFAA001B003C /* AnimalDetailsiPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A444A29512F4EFAA001B003C /* AnimalDetailsiPhoneViewController.xib */; };
-		A452AF371217C4C700E5166A /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A452AF361217C4C700E5166A /* MainWindow-iPad.xib */; };
 		A46EA27A123F9A0B0049005A /* AnimalImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A46EA278123F9A0B0049005A /* AnimalImageController.m */; };
 		A46EA27B123F9A0B0049005A /* AnimalImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46EA279123F9A0B0049005A /* AnimalImageController.xib */; };
 		A46F9AA712D4886500819E65 /* ViewImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A46F9AA612D4886500819E65 /* ViewImage.png */; };
@@ -176,7 +175,6 @@
 		A4A25D2A12D97F5E003E45D2 /* SearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A25D2812D97F5E003E45D2 /* SearchTableViewController.xib */; };
 		A4D3C4D712DA52B100BFC300 /* CustomSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3C4D512DA52B100BFC300 /* CustomSearchViewController.m */; };
 		A4D3C4D812DA52B100BFC300 /* CustomSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D3C4D612DA52B100BFC300 /* CustomSearchViewController.xib */; };
-		A4F98187123232AC001A52C7 /* MainIpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4F98186123232AC001A52C7 /* MainIpad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -351,7 +349,6 @@
 		A444A29312F4EFAA001B003C /* AnimalDetailsiPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalDetailsiPhoneViewController.h; sourceTree = "<group>"; };
 		A444A29412F4EFAA001B003C /* AnimalDetailsiPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalDetailsiPhoneViewController.m; sourceTree = "<group>"; };
 		A444A29512F4EFAA001B003C /* AnimalDetailsiPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDetailsiPhoneViewController.xib; sourceTree = "<group>"; };
-		A452AF361217C4C700E5166A /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		A46EA277123F9A0B0049005A /* AnimalImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalImageController.h; sourceTree = "<group>"; };
 		A46EA278123F9A0B0049005A /* AnimalImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalImageController.m; sourceTree = "<group>"; };
 		A46EA279123F9A0B0049005A /* AnimalImageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalImageController.xib; sourceTree = "<group>"; };
@@ -377,7 +374,6 @@
 		A4D3C4D412DA52B100BFC300 /* CustomSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchViewController.h; sourceTree = "<group>"; };
 		A4D3C4D512DA52B100BFC300 /* CustomSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchViewController.m; sourceTree = "<group>"; };
 		A4D3C4D612DA52B100BFC300 /* CustomSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSearchViewController.xib; sourceTree = "<group>"; };
-		A4F98186123232AC001A52C7 /* MainIpad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainIpad.xib; path = Classes/MainIpad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,7 +438,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */,
 				61DC1A3413DD39F900F5A660 /* CustomSettings.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -450,7 +445,6 @@
 				A452AF351217C4BE00E5166A /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				A43C169F123CE0C100E4738C /* AudioToolbox.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -489,6 +483,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A43C169F123CE0C100E4738C /* AudioToolbox.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -593,6 +588,7 @@
 		A4187903130D571100009FC0 /* SplashScreens */ = {
 			isa = PBXGroup;
 			children = (
+				A432EC50176EDA7500FD30ED /* iPhoneLaunch-568h@2x.png */,
 				61C97FC313F21EFA00892FC4 /* iPhoneLaunch.png */,
 				61C97FC413F21EFA00892FC4 /* iPhoneLaunch@2x.png */,
 				61C97FBF13F21E8D00892FC4 /* iPadDefault-Landscape.png */,
@@ -622,8 +618,6 @@
 			isa = PBXGroup;
 			children = (
 				A499798212EFCBC80032383D /* MainIpad2.xib */,
-				A4F98186123232AC001A52C7 /* MainIpad.xib */,
-				A452AF361217C4C700E5166A /* MainWindow-iPad.xib */,
 			);
 			name = "Resources-iPad";
 			sourceTree = "<group>";
@@ -842,8 +836,6 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
 				61E8B669120536A7005470CD /* TaxonListViewController.xib in Resources */,
-				A452AF371217C4C700E5166A /* MainWindow-iPad.xib in Resources */,
-				A4F98187123232AC001A52C7 /* MainIpad.xib in Resources */,
 				A441D496123308A8003C6F98 /* AnimalDetailiPad.xib in Resources */,
 				A46EA27B123F9A0B0049005A /* AnimalImageController.xib in Resources */,
 				A41B2C6312A10A47004F4D83 /* AudioListViewController.xib in Resources */,
