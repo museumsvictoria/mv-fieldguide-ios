@@ -260,36 +260,36 @@
     //	NSLog(@"searchTerms Count:%d", [searchTerms count]);
 	
     
-    [searchString appendString: [NSString stringWithFormat:@"(animalName MATCHES[c] '(.* )?%@.*'", [searchTerms objectAtIndex:0]]];
+    [searchString appendString: [NSString stringWithFormat:@"(animalName MATCHES[cd] '(.* )?%@.*'", [searchTerms objectAtIndex:0]]];
 	if ([searchTerms count] > 1) {
 		//build or statements
 		for (int i = 1; i < [searchTerms count]; i++) {
-				[searchString appendString: [NSString stringWithFormat:@" AND animalName MATCHES[c] '(.* )?%@.*'", [searchTerms objectAtIndex:i]]];
+				[searchString appendString: [NSString stringWithFormat:@" AND animalName MATCHES[cd] '(.* )?%@.*'", [searchTerms objectAtIndex:i]]];
 		}
 	}
 	
 	//search on Common Names
 	//OR (ANY commonNames.commonName == "red" AND ANY commonNames.commonName == "snake")	
-	[searchString appendString: [NSString stringWithFormat:@") OR (ANY commonNames.commonName MATCHES[c] '(.* )?%@.*'", [searchTerms objectAtIndex:0]]];
+	[searchString appendString: [NSString stringWithFormat:@") OR (ANY commonNames.commonName MATCHES[cd] '(.* )?%@.*'", [searchTerms objectAtIndex:0]]];
 	if ([searchTerms count] > 1) {
 		//build or statements
 		for (int i = 1; i < [searchTerms count]; i++) {
-			[searchString appendString: [NSString stringWithFormat:@" AND ANY commonNames.commonName MATCHES[c] '(.* )?%@.*'", [searchTerms objectAtIndex:i]]];
+			[searchString appendString: [NSString stringWithFormat:@" AND ANY commonNames.commonName MATCHES[cd] '(.* )?%@.*'", [searchTerms objectAtIndex:i]]];
 		}
 	}
 	//OR there is a species or genus match
-	[searchString appendString: [NSString stringWithFormat:@") OR ( genusName BEGINSWITH[c] '%@'", [searchTerms objectAtIndex:0]]];
+	[searchString appendString: [NSString stringWithFormat:@") OR ( genusName BEGINSWITH[cd] '%@'", [searchTerms objectAtIndex:0]]];
 	if ([searchTerms count] > 1) {
 		//build or statements
 		for (int i = 1; i < [searchTerms count]; i++) {
-			[searchString appendString: [NSString stringWithFormat:@" OR genusName BEGINSWITH[c] '%@'", [searchTerms objectAtIndex:i]]];
+			[searchString appendString: [NSString stringWithFormat:@" OR genusName BEGINSWITH[cd] '%@'", [searchTerms objectAtIndex:i]]];
 		}
 	}
-	[searchString appendString: [NSString stringWithFormat:@") OR (species BEGINSWITH[c] '%@'", [searchTerms objectAtIndex:0]]];
+	[searchString appendString: [NSString stringWithFormat:@") OR (species BEGINSWITH[cd] '%@'", [searchTerms objectAtIndex:0]]];
 	if ([searchTerms count] > 1) {
 		//build or statements
 		for (int i = 1; i < [searchTerms count]; i++) {
-			[searchString appendString: [NSString stringWithFormat:@" OR species BEGINSWITH[c] '%@'", [searchTerms objectAtIndex:i]]];
+			[searchString appendString: [NSString stringWithFormat:@" OR species BEGINSWITH[cd] '%@'", [searchTerms objectAtIndex:i]]];
 		}
 	}
 	
