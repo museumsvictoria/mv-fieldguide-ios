@@ -1023,8 +1023,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Field_Guide_2010_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Field_Guide_2010-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "Field Guide 2010";
@@ -1042,8 +1041,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Field_Guide_2010_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Field_Guide_2010-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "Field Guide 2010";
@@ -1077,8 +1075,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Field_Guide_2010_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Field_Guide_2010-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "Field Guide 2010";
@@ -1112,7 +1109,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Field_Guide_2010_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Field_Guide_2010-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = "Field Guide 2010";
